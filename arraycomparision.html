@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<p>Arrays use numbers to access its elements.</p>
+
+<button onclick="arrayComparision();">Try it</button>
+<div>Press try it button and see output in console.</div>
+<script>
+
+var arr1=['abcd','ee','cd'];
+var arr2=['aad', 'aad','dd','ff'];
+function hasCommonCharacter(str1, str2) {
+  var ret = false;
+  const obj = str2.split("");
+  for(str of str1){
+    let idx = obj.findIndex(s => s === str);
+    if(idx >= 0){
+      ret=true;
+      break;
+    }
+  }
+  return ret;
+}
+
+function arrayComparision()
+{
+var Arr1Len= arr1.length;
+var Arr2Len= arr2.length;
+var loop=Arr1Len;
+if(Arr1Len<Arr2Len)
+{loop= Arr1Len;}
+else{loop= Arr2Len;}
+
+var i=0;
+while(i<loop)
+{
+console.log(arr1[i]," ", arr2[i],"->", hasCommonCharacter(arr1[i], arr2[i]));
+i++;
+
+}
+if(loop<Arr1Len)
+{
+for(i=loop; i<Arr1Len; i++)
+{console.log(arr1[i]," ","","->", false);
+i++;}
+}
+if(loop<Arr2Len)
+{
+for(i=loop; i<Arr2Len; i++)
+{console.log(""," ",arr2[i],"->", false);
+i++;}
+}
+
+}
+</script>
+
+</body>
+</html>
